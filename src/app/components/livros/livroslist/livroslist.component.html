@@ -1,1 +1,108 @@
-<p>livroslist works!</p>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="backgroundImageExample.toggle()"
+        aria-controls="backgroundImageExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div
+        mdbCollapse
+        #backgroundImageExample="mdbCollapse"
+        class="collapse navbar-collapse"
+        id="backgroundImageExample"
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Livros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Adicionar livros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!-- Background image -->
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://blog.facens.br/wp-content/uploads/2021/04/bibliotecas.png');
+      height: 400px;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 300px">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Biblioteca Uni</h1>
+          <h4 class="mb-3">Veja seus livros aqui</h4>
+          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+            >teste</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+<!-- 
+ Tabela BootStrap para exibir a lista de livros com suas informações, incluindo capa,
+ título, autor, editora e status,puxando css direto no html.
+-->
+<table class="table table-hover align-middle">
+  <thead class="table-light">
+    <tr>
+      <th>Livro</th>
+      <th>Autor</th>
+      <th>Editora</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (livro of lista; track $index) {
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+            [src]="livro.capa"
+            alt="Capa de {{ livro.titulo }}"
+            style="width: 120px; height: 160px; object-fit: cover"
+            class="rounded"
+          />
+          <div class="ms-3">
+            <p class="fw-bold mb-0">{{ livro.titulo }}</p>
+            <p class="text-muted mb-0 small">ID: {{ livro.id }}</p>
+          </div>
+        </div>
+      </td>
+      <td>{{ livro.autor }}</td>
+      <td>{{ livro.editora }}</td>
+      <td>
+        <span class="badge text-bg-success rounded-pill">Disponível</span>
+      </td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm text-decoration-none fw-bold">
+          Editar
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
