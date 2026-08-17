@@ -1,0 +1,36 @@
+.topo{
+    top: 30vh;
+    position: relative;
+}
+
+.card-login {
+  background-color: var(--cor-creme);
+  border: 1px solid var(--cor-vinho);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(92, 26, 27, 0.25);
+}
+
+.card-login .card-title {
+  color: var(--cor-vinho);
+  font-weight: 600;
+}
+
+.card-login .card-header {
+  background-color: var(--cor-vinho);
+  color: var(--cor-creme);
+  font-weight: 600;
+}
+
+.text-vinho {
+  color: var(--cor-vinho);
+}
+
+.btn-outline-vinho {
+  color: var(--cor-vinho);
+  border-color: var(--cor-vinho);
+}
+
+.btn-outline-vinho:hover {
+  background-color: var(--cor-vinho);
+  color: var(--cor-creme);
+}

@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --cor-cafe: #6F4E37;
+  --cor-vinho: #5C1A1B;
+  --cor-creme: #F5F0E6;
+  --cor-destaque: #C9A76A;
+}
+
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+.centralizar{
+     text-align: center;
+}
+
+body{
+     background-color: #F5F0E6;
+}
+
+.card-login .form-control:focus {
+  border-color: var(--cor-vinho) !important;
+  box-shadow: 0 0 0 0.15rem rgba(92, 26, 27, 0.25) !important;
+}
+
+.card-login .form-label.active,
+.card-login label.active {
+  color: var(--cor-vinho);
+}
+
+.bg-cafe {
+  background-color: var(--cor-vinho) !important;
+}
+
+.navbar .nav-link {
+  color: var(--cor-creme) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--cor-destaque) !important;
+}
+
+.navbar-brand {
+  color: var(--cor-creme) !important;
+  font-weight: 600;
+}
