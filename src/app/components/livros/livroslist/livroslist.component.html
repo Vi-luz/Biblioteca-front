@@ -2,14 +2,21 @@
  Tabela BootStrap para exibir a lista de livros com suas informações, incluindo capa,
  título, autor, editora e status,puxando css direto no html.
 -->
+
 <table class="table table-hover align-middle">
   <thead class="table-light">
+     
     <tr>
       <th>Livro</th>
       <th>Autor</th>
       <th>Editora</th>
       <th>Status</th>
       <th>Ações</th>
+      <th class="direita">
+         <button type="button" class="btn btn-primary btn-rounded" mdbRipple routerLink="admin/livrosdetails">
+        Adicionar Livro
+      </button>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -35,9 +42,13 @@
         <span class="badge text-bg-success rounded-pill">Disponível</span>
       </td>
       <td>
-        <button type="button" class="btn btn-link btn-sm text-decoration-none fw-bold">
+        <button type="button" class="btn btn-warning btn-rounded  btn-sm text-decoration-none fw-bold" routerLink="admin/livros/edit/{{ livro.id }}">
           Editar
         </button>
+        <button type="button2" class="btn btn-danger btn-rounded  btn-sm text-decoration-none fw-bold" routerLink="admin/livros/delete/{{ livro.id }}">
+          Deletar
+        </button>
+
       </td>
     </tr>
     }

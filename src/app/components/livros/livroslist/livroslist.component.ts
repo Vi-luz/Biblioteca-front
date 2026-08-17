@@ -2,11 +2,12 @@ import {Component } from '@angular/core';
 import { LivroModel } from '../../../models/livro-model';
 import { CommonModule } from '@angular/common';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-livroslist',
   standalone: true,
-  imports: [CommonModule,MdbCollapseModule],
+  imports: [CommonModule,MdbCollapseModule,RouterLink],
   templateUrl: './livroslist.component.html',
   styleUrls: ['./livroslist.component.scss']
 })
