@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-4"></div>
+
+        <div class="col-lg-4 centralizar topo">
+
+            <div class="card card-login shadow-3 mb-3" style="max-width: 18rem;">
+                <div class="card-header card-title">Login</div>
+                <div class="card-body text-vinho">
+                    <mdb-form-control>
+                        <input mdbInput type="text" id="usuario" class="form-control" [(ngModel)]="usuario" autocomplete="off"/>
+                        <label mdbLabel class="form-label" for="usuario">Usuário</label>
+                    </mdb-form-control>
+                    <br>
+                    <mdb-form-control>
+                        <input mdbInput type="password" id="senha" class="form-control" [(ngModel)]="senha" autocomplete="off"/>
+                        <label mdbLabel class="form-label" for="senha">Senha</label>
+                    </mdb-form-control>
+                    <br>
+                    <button type="button" class="btn btn-outline-vinho btn-rounded" mdbRipple rippleColor="dark" (click)="logar()">
+                        Logar</button>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

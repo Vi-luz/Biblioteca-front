@@ -10,6 +10,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^19.0.0",
+    "@angular/cdk": "^19.0.0",
     "@angular/common": "^19.2.0",
     "@angular/compiler": "^19.2.0",
     "@angular/core": "^19.2.0",
@@ -17,8 +19,14 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+<<<<<<< HEAD
     "bootstrap": "^5.3.8",
     "mdb-angular-ui-kit": "^10.0.0",
+=======
+    "@fortawesome/fontawesome-free": "^6.0.0",
+    "chart.js": "^3.1.1",
+    "mdb-angular-ui-kit": "^8.0.0",
+>>>>>>> a0d8b060213ebffe4d0444cc565dc8dddf7d668c
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
