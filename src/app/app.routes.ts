@@ -1,3 +1,4 @@
+import { Routes } from '@angular/router';
 import { LoginComponent } from './components/layout/login/login.component';
 import { PrincipalComponent } from './components/layout/principal/principal.component';
 import { LivroslistComponent } from './components/livros/livroslist/livroslist.component';
