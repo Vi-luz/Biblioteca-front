@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { LivroModel } from '../../../models/livro-model';
 
@@ -12,9 +12,46 @@ import { LivroModel } from '../../../models/livro-model';
   styleUrl: './livrosdetails.component.scss'
 })
 export class LivrosdetailsComponent {
+
   public livro: LivroModel = new LivroModel(0, "", "", "", "");
 
-  save() {
-    alert('Salvo com sucesso');
+  router = inject(ActivatedRoute);
+  router2 = inject(Router);
+
+  constructor() {
+
+    const livroRecebido = history.state.livro;
+
+    if (livroRecebido) {
+      this.livro = livroRecebido;
+    }
+
   }
+
+  save() {
+
+    if (this.livro.id > 0) {
+
+      alert('Editado com sucesso');
+
+      this.router2.navigate(['/admin/livros'], {
+        state: {
+          livroEditado: this.livro
+        }
+      });
+
+    } else {
+
+      alert('Salvo com sucesso');
+
+      this.router2.navigate(['/admin/livros'], {
+        state: {
+          livroNovo: this.livro
+        }
+      });
+
+    }
+
+  }
+
 }

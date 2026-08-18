@@ -20,4 +20,38 @@ export class LivroslistComponent {
   new LivroModel(4, 'Cem Anos de Solidão', 'Gabriel García Márquez', 'Editora Record', 'https://placehold.co/45x45/dc3545/white?text=Chttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQTgBdo5gSmw-aAVRZ-IbrffCTF4zS2NcbgifyuKZxoQ&s=10A')
   ];
 
+  constructor() {
+    const livroNovo = history.state.livroNovo;
+    const livroEditado = history.state.livroEditado;
+
+    if (livroEditado) {
+      const indice = this.lista.findIndex(x => x.id == livroEditado.id);
+      this.lista[indice] = livroEditado;
+    }
+
+    if (livroNovo) {
+      const maiorId = this.lista.length > 0
+        ? Math.max(...this.lista.map(livro => livro.id))
+        : 0;
+
+        livroNovo.id = maiorId + 1;
+
+        this.lista.push(livroNovo);
+    }
   }
+
+  deletarLivro(livro: LivroModel) {
+
+    const confirmar = confirm(
+      `Deseja realmente excluir o livro "${livro.titulo}"?`
+    );
+
+    if (confirmar) {
+      this.lista = this.lista.filter(x => x.id != livro.id);
+
+      alert('Livro excluído com sucesso!');
+    }
+
+  }
+
+}

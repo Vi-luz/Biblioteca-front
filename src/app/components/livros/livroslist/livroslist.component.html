@@ -1,11 +1,11 @@
-<!-- 
+<!--
  Tabela BootStrap para exibir a lista de livros com suas informações, incluindo capa,
  título, autor, editora e status,puxando css direto no html.
 -->
 
 <table class="table table-hover align-middle">
   <thead class="table-light">
-     
+
     <tr>
       <th>Livro</th>
       <th>Autor</th>
@@ -13,7 +13,7 @@
       <th>Status</th>
       <th>Ações</th>
       <th class="direita">
-         <button type="button" class="btn btn-primary btn-rounded" mdbRipple routerLink="admin/livrosdetails">
+         <button type="button" class="btn btn-primary btn-rounded" mdbRipple routerLink="/admin/livros/new/">
         Adicionar Livro
       </button>
       </th>
@@ -42,10 +42,17 @@
         <span class="badge text-bg-success rounded-pill">Disponível</span>
       </td>
       <td>
-        <button type="button" class="btn btn-warning btn-rounded  btn-sm text-decoration-none fw-bold" routerLink="admin/livros/edit/{{ livro.id }}">
+        <button
+          type="button"
+          class="btn btn-warning btn-rounded btn-sm text-decoration-none fw-bold"
+          [routerLink]="['/admin/livros/edit', livro.id]"
+          [state]="{ livro: livro }">
           Editar
         </button>
-        <button type="button2" class="btn btn-danger btn-rounded  btn-sm text-decoration-none fw-bold" routerLink="admin/livros/delete/{{ livro.id }}">
+        <button
+          type="button"
+          class="btn btn-danger btn-rounded btn-sm text-decoration-none fw-bold"
+          (click)="deletarLivro(livro)">
           Deletar
         </button>
 

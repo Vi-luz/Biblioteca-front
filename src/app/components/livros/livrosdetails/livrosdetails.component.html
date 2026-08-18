@@ -4,30 +4,32 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                 
+
                     <div class="col-lg-4 centralizar topo">
 
             <div class="card card-login shadow-3 mb-3" style="max-width: 18rem;">
-                <div class="card-header card-title">Cadastro de Livro</div>
+                <div class="card-header card-title">
+                 {{ livro.id > 0 ? 'Editar Livro' : 'Cadastro de Livro' }}
+                </div>
                 <div class="card-body text-vinho">
                     <mdb-form-control>
                         <input mdbInput type="text" id="titulo" class="form-control" [(ngModel)]="livro.titulo" autocomplete="off"/>
-                        <label mdbLabel class="form-label" for="usuario">Usuário</label>
+                        <label mdbLabel class="form-label" for="titulo">Titulo</label>
                     </mdb-form-control>
                     <br>
                     <mdb-form-control>
                         <input mdbInput type="text" id="autor" class="form-control" [(ngModel)]="livro.autor" autocomplete="off"/>
-                        <label mdbLabel class="form-label" for="senha">Autor</label>
+                        <label mdbLabel class="form-label" for="autor">Autor</label>
                     </mdb-form-control>
                     <br>
                     <mdb-form-control>
                         <input mdbInput type="text" id="editora" class="form-control" [(ngModel)]="livro.editora" autocomplete="off"/>
-                        <label mdbLabel class="form-label" for="senha">Autor</label>
+                        <label mdbLabel class="form-label" for="editora">Editora</label>
                     </mdb-form-control>
                     <br>
                     <mdb-form-control>
                         <input mdbInput type="text" id="capa" class="form-control" [(ngModel)]="livro.capa" autocomplete="off"/>
-                        <label mdbLabel class="form-label" for="senha">Capa</label>
+                        <label mdbLabel class="form-label" for="capa">Capa</label>
                     </mdb-form-control>
                     <br>
                     <button type="button" class="btn btn-outline-vinho btn-rounded" mdbRipple rippleColor="dark" (click)="save()">
@@ -37,7 +39,7 @@
 
 
         </div>
-                    
+
                 </div>
             </div>
         </div>
