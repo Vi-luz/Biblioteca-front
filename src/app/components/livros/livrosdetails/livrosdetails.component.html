@@ -4,11 +4,13 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                 
+
                     <div class="col-lg-4 centralizar topo">
 
             <div class="card card-login shadow-3 mb-3" style="max-width: 18rem;">
-                <div class="card-header card-title">Cadastro de Livro</div>
+                <div class="card-header card-title">
+                 {{ livro.id > 0 ? 'Editar Livro' : 'Cadastro de Livro' }}
+                </div>
                 <div class="card-body text-vinho">
                     <mdb-form-control>
                         <input mdbInput type="text" id="titulo" class="form-control" [(ngModel)]="livro.titulo" autocomplete="off"/>
@@ -37,7 +39,7 @@
 
 
         </div>
-                    
+
                 </div>
             </div>
         </div>

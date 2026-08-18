@@ -12,31 +12,46 @@ import { LivroModel } from '../../../models/livro-model';
   styleUrl: './livrosdetails.component.scss'
 })
 export class LivrosdetailsComponent {
-  public livro: LivroModel = new LivroModel(0, "", "", "", "");
 
+  public livro: LivroModel = new LivroModel(0, "", "", "", "");
 
   router = inject(ActivatedRoute);
   router2 = inject(Router);
 
-  constructor(){
-    let id = this.router.snapshot.params['id'];
-    if (id > 0) {
-      this.findById(id);
+  constructor() {
+
+    const livroRecebido = history.state.livro;
+
+    if (livroRecebido) {
+      this.livro = livroRecebido;
     }
 
-  }
-  findById(id: number) {
-    let livroRetornado = this.router.snapshot.params['id'];
-    this.livro = livroRetornado;
   }
 
   save() {
+
     if (this.livro.id > 0) {
+
       alert('Editado com sucesso');
-    this.router2.navigate(['admin/livros'],{state:{livroEditado : this.livro}});
+
+      this.router2.navigate(['/admin/livros'], {
+        state: {
+          livroEditado: this.livro
+        }
+      });
+
     } else {
-    alert('Salvo com sucesso');
-    this.router2.navigate(['admin/livros'],{state:{livroNovo : this.livro}});
+
+      alert('Salvo com sucesso');
+
+      this.router2.navigate(['/admin/livros'], {
+        state: {
+          livroNovo: this.livro
+        }
+      });
+
     }
+
   }
+
 }

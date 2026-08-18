@@ -10,6 +10,6 @@ export const routes: Routes = [
     { path: "admin", component: PrincipalComponent, children: [
         { path: "livros", component: LivroslistComponent },
         { path: "livros/new", component: LivrosdetailsComponent },
-        { path: "livros/edit/:id", component: LivrosdetailsComponent}
+        { path: "livros/edit/:id", component: LivrosdetailsComponent},
     ]}
 ];

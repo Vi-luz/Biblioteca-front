@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./livroslist.component.scss']
 })
 export class LivroslistComponent {
-  
+
   lista: LivroModel[] = [
   new LivroModel(1, 'Dom Casmurro', 'Machado de Assis', 'Editora Ática', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTekkRUyu7uOF8FEmpam0XG0AhQZLESlkb9Q57R_yfIUg&s'),
   new LivroModel(2, '1984', 'George Orwell', 'Companhia das Letras', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNJmuJqAPa3P4-vVoK0IdEskS5VrNEPVgFdtHJ5zHO_Q&s'),
@@ -30,9 +30,28 @@ export class LivroslistComponent {
     }
 
     if (livroNovo) {
-      livroNovo.id = 555;
-      this.lista.push(livroNovo);
+      const maiorId = this.lista.length > 0
+        ? Math.max(...this.lista.map(livro => livro.id))
+        : 0;
+
+        livroNovo.id = maiorId + 1;
+
+        this.lista.push(livroNovo);
     }
+  }
+
+  deletarLivro(livro: LivroModel) {
+
+    const confirmar = confirm(
+      `Deseja realmente excluir o livro "${livro.titulo}"?`
+    );
+
+    if (confirmar) {
+      this.lista = this.lista.filter(x => x.id != livro.id);
+
+      alert('Livro excluído com sucesso!');
+    }
+
   }
 
 }
